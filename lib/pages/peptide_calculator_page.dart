@@ -141,6 +141,25 @@ class PeptideCalculatorPageState extends State<PeptideCalculatorPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
+              Center(
+              heightFactor: 1.25,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Replace with your desired URL
+                  const url = 'https://www.fitandfab812.com/';
+                  // Launch the URL
+                  _launchURL(url);
+                },
+                child: Text(
+                  'Visit Our Website',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: const Color.fromRGBO(227, 50, 121, 1.0) // Change to your desired color
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
               Text('What is the total volume of your syringe?', style: Theme.of(context).textTheme.bodyLarge), // Questions in secondary font
               Column(
                 children: List.generate(syringeVolumes.length, (index) {
@@ -329,23 +348,6 @@ class PeptideCalculatorPageState extends State<PeptideCalculatorPage> {
               ),
               ),
              
-              Center(
-              heightFactor: 1.25,
-              child: ElevatedButton(
-                onPressed: () {
-                  // Replace with your desired URL
-                  const url = 'https://www.fitandfab812.com/';
-                  // Launch the URL
-                  _launchURL(url);
-                },
-                child: Text(
-                  'Visit Our Website',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: const Color.fromRGBO(227, 50, 121, 1.0) // Change to your desired color
-                  ),
-                ),
-              ),
-            ),
             ],
           ),
         ),
