@@ -5,12 +5,13 @@ void main() {
   runApp(const PeptideCalculatorApp());
 }
 
-class PeptideCalculatorApp extends StatelessWidget {
+class PeptideCalculatorApp extends StatelessWidget {  
   const PeptideCalculatorApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Peptide Calculator',
       theme: ThemeData(
         primarySwatch: Colors.blue,

@@ -179,9 +179,10 @@ class PeptideCalculatorPageState extends State<PeptideCalculatorPage> {
                       Text(syringeVolumes[index], style: Theme.of(context).textTheme.bodyLarge), // Options in secondary font
                       const SizedBox(width: 30),
                       Image.asset(
-                        syringeVolumeImages[index],
-                        width: 120,
-                        height: 75,
+                      syringeVolumeImages[index],
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.1,
+                        fit: BoxFit.contain,
                       ),
                     ],
                   );
@@ -214,8 +215,9 @@ class PeptideCalculatorPageState extends State<PeptideCalculatorPage> {
                   const SizedBox(width: 90),
                   Image.asset(
                     peptideImage,
-                    width: 130,
-                    height: 120,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    fit: BoxFit.contain
                   ),
                 ],
               ),
@@ -255,8 +257,9 @@ class PeptideCalculatorPageState extends State<PeptideCalculatorPage> {
                   const SizedBox(width: 90),
                   Image.asset(
                     waterImage,
-                    width: 130,
-                    height: 120,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    fit: BoxFit.contain,
                   ),
                 ],
               ),
@@ -359,7 +362,7 @@ void _launchURL(String url) async {
   final Uri uri = Uri.parse(url);
   if (await canLaunchUrl(uri)) {
     await launchUrl(uri, mode: LaunchMode.externalApplication);
-  } else {
+  } else if (mounted) {
     // Display an error message in case of failure
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
