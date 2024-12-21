@@ -100,7 +100,7 @@ class PeptideCalculatorPageState extends State<PeptideCalculatorPage> {
               text: formattedDose,
               style: const TextStyle(
                 color: Color.fromRGBO(236, 72, 153, 1.0), // Color for the dose
-                fontFamily: 'Adobe_Caslon_Pro',
+                fontFamily: 'Halyard_Display',
               ),
             ),
             const TextSpan(
@@ -110,7 +110,7 @@ class PeptideCalculatorPageState extends State<PeptideCalculatorPage> {
               text: syringeUnits.toStringAsFixed(1),
               style: const TextStyle(
                 color: Color.fromRGBO(236, 72, 153, 1.0), // Color for syringe units
-                fontFamily: 'Adobe_Caslon_Pro',
+                fontFamily: 'Halyard_Display',
               ),
             ),
             const TextSpan(
