@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class ScalePainter extends CustomPainter {
   final double syringeUnits; // Calculated syringe units
   final double scalingFactor; // Total scale units based on syringe volume (e.g., 30, 50, 100)
+  final ThemeData themeData;
 
-  ScalePainter({required this.syringeUnits, required this.scalingFactor});
+  ScalePainter({required this.syringeUnits, required this.scalingFactor, required this.themeData});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -17,7 +18,7 @@ class ScalePainter extends CustomPainter {
 
     // Paint for the main scale line
     Paint scalePaint = Paint()
-      ..color = Colors.black
+      ..color = themeData.textTheme.bodyLarge?.color ?? Colors.black
       ..strokeWidth = 1.5;
 
     // Paint for the highlighted section (up to syringeUnits)
@@ -61,7 +62,7 @@ class ScalePainter extends CustomPainter {
       // Draw labels for every 10 units
       if (i % 10 == 0) {
         // Change color based on the desired dosage
-        Color labelColor = (i <= syringeUnits) ? Colors.pink : Colors.black;
+        Color labelColor = (i <= syringeUnits) ? Colors.pink : scalePaint.color;
 
         TextPainter textPainter = TextPainter(
           text: TextSpan(

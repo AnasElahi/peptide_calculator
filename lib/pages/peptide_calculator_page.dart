@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:peptide_calculator/painters/syringe_scale_painter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -345,12 +346,140 @@ class PeptideCalculatorPageState extends State<PeptideCalculatorPage> {
           child: CustomPaint(
             painter: ScalePainter(
               syringeUnits: syringeUnits, // Pass the calculated syringe units
-              scalingFactor: totalUnits // Pass the volume of the syringe
+              scalingFactor: totalUnits,
+              themeData: Theme.of(context), // Pass the volume of the syringe
               ),
               size: Size(MediaQuery.of(context).size.width, 100), // Dynamically adapt to screen width
               ),
               ),
-             
+            
+            
+             // New Socials and Contact Section
+              const Divider(thickness: 1),
+              const SizedBox(height: 8),
+              Text(
+                'Connect with us:',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              const SizedBox(height: 8),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 10),
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    spacing: 16.0,
+                    runSpacing: 8.0,
+                    children: [
+                      GestureDetector(
+      onTap: () => _launchURL('https://www.facebook.com/fitandfab812llc'),
+      child: Image.asset(
+        'assets/images/facebook.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+    GestureDetector(
+      onTap: () => _launchURL('https://x.com/fitandfab812'),
+      child: Image.asset(
+        'assets/images/x.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+    GestureDetector(
+      onTap: () => _launchURL('https://www.tiktok.com/@fitandfab812llc'),
+      child: Image.asset(
+        'assets/images/tiktok.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+    GestureDetector(
+      onTap: () => _launchURL('https://www.instagram.com/fitandfab812'),
+      child: Image.asset(
+        'assets/images/instagram.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+    GestureDetector(
+      onTap: () => _launchURL('https://www.youtube.com/@fitandfab812'),
+      child: Image.asset(
+        'assets/images/youtube.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+    GestureDetector(
+      onTap: () => _launchURL('https://www.pinterest.com/fitandfab812/'),
+      child: Image.asset(
+        'assets/images/pinterest.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+    
+                      // IconButton(
+                      //   icon: const Icon(Icons.email, color: Colors.green),
+                      //   onPressed: () => _launchURL('mailto:info@fitandfab812.com'),
+                      // ),
+                      // IconButton(
+                      //   icon: const Icon(Icons.phone, color: Colors.green),
+                      //   onPressed: () => _launchURL('tel:18125300765'),
+                      // ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+
+                   Text(
+                    'Contact us:',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  const SizedBox(height: 10),
+
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    spacing: 16.0,
+                    runSpacing: 8.0,
+                    children: [
+                      GestureDetector(
+      onTap: () => _launchURL('mailto:info@fitandfab812.com'),
+      child: Image.asset(
+        'assets/images/mail.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+
+    // Phone Number
+                  
+                    GestureDetector(
+      onTap: () => _launchURL('tel:18125300765'),
+      child: Image.asset(
+        'assets/images/phone.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+    GestureDetector(
+      onTap: () => _launchURL('https://wa.me/18125300765'),
+      child: Image.asset(
+        'assets/images/whatsapp.png',
+        width: 40,
+        height: 40,
+      ),
+    ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+
+                  
+                  
+                  
+                ],
+              )
+
             ],
           ),
         ),
